@@ -1,5 +1,5 @@
 [[boot-documentation]]
-= Spring Boot Documentation
+= Spring Boot 文档（Documentation）
 include::attributes.adoc[]
 
 This section provides a brief overview of Spring Boot reference documentation.
