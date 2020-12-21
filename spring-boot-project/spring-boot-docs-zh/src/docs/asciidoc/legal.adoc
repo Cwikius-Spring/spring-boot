@@ -1,5 +1,5 @@
 [legal]
-= Legal
+= 版权和法律法规（Legal）
 
 {spring-boot-version}
 
