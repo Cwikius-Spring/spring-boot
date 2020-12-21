@@ -51,11 +51,11 @@ NOTE: 所有 Spring Boot 的项目和内容都是开源的，包括这个文档�
 
 [[boot-documentation-first-steps]]
 == 第一步
-If you are getting started with Spring Boot or 'Spring' in general, start with <<getting-started.adoc#getting-started, the following topics>>:
+如果你已经准备好开始使用 Spring Boot 或者 'Spring'，请从 <<getting-started.adoc#getting-started, Spring Boot 开始使用主题>> 开始了解：
 
-* *From scratch:* <<getting-started.adoc#getting-started-introducing-spring-boot, Overview>> | <<getting-started.adoc#getting-started-system-requirements, Requirements>> | <<getting-started.adoc#getting-started-installing-spring-boot, Installation>>
-* *Tutorial:* <<getting-started.adoc#getting-started-first-application, Part 1>> | <<getting-started.adoc#getting-started-first-application-code, Part 2>>
-* *Running your example:* <<getting-started.adoc#getting-started-first-application-run, Part 1>> | <<getting-started.adoc#getting-started-first-application-executable-jar, Part 2>>
+* *从 0 开始使用:* <<getting-started.adoc#getting-started-introducing-spring-boot, 概述>> | <<getting-started.adoc#getting-started-system-requirements, 运行要求>> | <<getting-started.adoc#getting-started-installing-spring-boot, 安装>>
+* *教程:* <<getting-started.adoc#getting-started-first-application, 第 1 部分>> | <<getting-started.adoc#getting-started-first-application-code, 第 2 部分>>
+* *运行你的示例程序：* <<getting-started.adoc#getting-started-first-application-run, 第 1 部分>> | <<getting-started.adoc#getting-started-first-application-executable-jar, 第 2 部分>>
 
 
 
