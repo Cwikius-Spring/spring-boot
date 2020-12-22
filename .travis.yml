@@ -36,5 +36,5 @@ deploy:
   region: us-east-2
   bucket: "com.edtestbank.docs"
   skip_cleanup: true
-  local_dir: spring-boot-docs-zh/build
+  local_dir: spring-boot-project/spring-boot-docs-zh/build
   upload-dir: spring-boot-docs
