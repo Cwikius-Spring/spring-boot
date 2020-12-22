@@ -37,4 +37,4 @@ deploy:
   bucket: "com.edtestbank.docs"
   skip_cleanup: true
   local_dir: build
-  upload-dir: spring-batch-docs
+  upload-dir: spring-boot-docs
