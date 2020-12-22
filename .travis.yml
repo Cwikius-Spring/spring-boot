@@ -26,7 +26,7 @@ before_script:
   - git rm --cached --ignore-unmatch index.html
 
 script:
-  - ./spring-boot-docs-zh/gradlew asciidoctor
+  - ./gradlew :spring-boot-project:spring-boot-docs-zh:asciidoctor
 
 
 deploy:
@@ -36,5 +36,5 @@ deploy:
   region: us-east-2
   bucket: "com.edtestbank.docs"
   skip_cleanup: true
-  local_dir: build
+  local_dir: spring-boot-docs-zh/build
   upload-dir: spring-boot-docs
