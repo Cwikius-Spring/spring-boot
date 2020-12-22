@@ -1,64 +1,61 @@
 [[boot-documentation]]
-= Spring Boot Documentation
+= Spring Boot 文档（Documentation）
 include::attributes.adoc[]
 
-This section provides a brief overview of Spring Boot reference documentation.
-It serves as a map for the rest of the document.
+本部分提供了有关 Spring Boot 参考文档的概述。同时为余下的文档内容提供了一个类似地图的导航和概述。
 
 
 
 [[boot-documentation-about]]
-== About the Documentation
-The Spring Boot reference guide is available as:
+== 关于这个文档
+Spring Boot 参考指南提供下面的几种可用版本：
 
-* {spring-boot-docs}/html/[Multi-page HTML]
-* {spring-boot-docs}/htmlsingle/[Single page HTML]
+* {spring-boot-docs}/html/[多页 HTML 格式]
+* {spring-boot-docs}/htmlsingle/[单页 HTML 格式]
 * {spring-boot-docs}/pdf/spring-boot-reference.pdf[PDF]
 
-The latest copy is available at {spring-boot-current-docs}.
+最新的版本拷贝可以在  {spring-boot-current-docs} 中查看。
 
-Copies of this document may be made for your own use and for distribution to others, provided that you do not charge any fee for such copies and further provided that each copy contains this Copyright Notice, whether distributed in print or electronically.
-
+拷贝本文档可以供你自己进行修改或者对修改后进行发布给其他用户，不管是电子版本还是纸介质版本都是可以的。
+但你不能对你的拷贝版本进行收费，同时还需要在你的版本中包含有版权信息。
 
 
 [[boot-documentation-getting-help]]
-== Getting Help
-If you have trouble with Spring Boot, we would like to help.
+== 获得帮助
+如果你在使用 Spring Boot 的时候遇到问题，并且希望能够获得一些帮助，你可以：
 
-* Try the <<howto.adoc#howto, How-to documents>>.
-  They provide solutions to the most common questions.
-* Learn the Spring basics.
-  Spring Boot builds on many other Spring projects.
-  Check the https://spring.io[spring.io] web-site for a wealth of reference documentation.
-  If you are starting out with Spring, try one of the https://spring.io/guides[guides].
-* Ask a question.
-  We monitor https://stackoverflow.com[stackoverflow.com] for questions tagged with https://stackoverflow.com/tags/spring-boot[`spring-boot`].
-* Report bugs with Spring Boot at https://github.com/spring-projects/spring-boot/issues.
+* 访问  <<howto.adoc#howto, 如何使用文档>>。
+  在如何使用文档中提供了针对一些最常见问题的解决方案。
+* 学习 Spring 有关的基础知识。
+  Spring Boot 被用来构建很多 Spring 的项目，请访问 https://spring.io[spring.io] 网站。该网站中提供了很多有用的参考文件。
+  如果你尝试开始使用 Spring，请访问  https://spring.io/guides[guides] 页面中的内容。
+* 询问一个问题
+  Spring 的官方小组将会一直关注 https://stackoverflow.com[stackoverflow.com] 网站中被标记为 https://stackoverflow.com/tags/spring-boot[`spring-boot`] 的问题。
+* 反馈有关 Spring Boot 的 Bug 和错误，请访问 https://github.com/spring-projects/spring-boot/issues。
 
-NOTE: All of Spring Boot is open source, including the documentation.
-If you find problems with the docs or if you want to improve them, please {spring-boot-code}[get involved].
+NOTE: 所有 Spring Boot 的项目和内容都是开源的，包括这个文档也是开源的，如果你在使用的时候发现了一些问题包括这个文档的问题，并且希望改善文档的话，请访问 {spring-boot-code}[加入项目组] 页面。
 
 
 
 [[boot-documentation-upgrading]]
-== Upgrading from an Earlier Version
-Instructions for how to upgrade from earlier versions of Spring Boot are provided on the project {github-wiki}[wiki].
-Follow the links in the {github-wiki}#release-notes[release notes] section to find the version that you want to upgrade to.
+== 从早期版本进行升级
+如何从早期的 Spring Boot 版本进行升级的内容被放置在 {github-wiki}[wiki] 页面中。
+请访问 {github-wiki}#release-notes[release notes] 部分的内容来找到你希望进行升级的版本。
 
-Upgrading instructions are always the first item in the release notes.
-If you are more than one release behind, please make sure that you also review the release notes of the versions that you jumped.
+有关升级的指南总是会放在发行日志的最前面。
+如果你不是按照主要版本进行升级的，你的升级版本已经落后了不少版本的话，请阅读你将要跳过的升级版本的日志。
 
-You should always ensure that you are running a {github-wiki}/Supported-Versions[supported version] of Spring Boot.
+你应该确保你的 Spring Boot 总是能够在 {github-wiki}/Supported-Versions[支持的版本] 下运行。
 
 
 
 [[boot-documentation-first-steps]]
-== First Steps
-If you are getting started with Spring Boot or 'Spring' in general, start with <<getting-started.adoc#getting-started, the following topics>>:
+== 第一步
+如果你已经准备好开始使用 Spring Boot 或者 'Spring'，请从 <<getting-started.adoc#getting-started, Spring Boot 开始使用主题>> 开始了解：
 
-* *From scratch:* <<getting-started.adoc#getting-started-introducing-spring-boot, Overview>> | <<getting-started.adoc#getting-started-system-requirements, Requirements>> | <<getting-started.adoc#getting-started-installing-spring-boot, Installation>>
-* *Tutorial:* <<getting-started.adoc#getting-started-first-application, Part 1>> | <<getting-started.adoc#getting-started-first-application-code, Part 2>>
-* *Running your example:* <<getting-started.adoc#getting-started-first-application-run, Part 1>> | <<getting-started.adoc#getting-started-first-application-executable-jar, Part 2>>
+* *从 0 开始使用:* <<getting-started.adoc#getting-started-introducing-spring-boot, 概述>> | <<getting-started.adoc#getting-started-system-requirements, 运行要求>> | <<getting-started.adoc#getting-started-installing-spring-boot, 安装>>
+* *教程:* <<getting-started.adoc#getting-started-first-application, 第 1 部分>> | <<getting-started.adoc#getting-started-first-application-code, 第 2 部分>>
+* *运行你的示例程序：* <<getting-started.adoc#getting-started-first-application-run, 第 1 部分>> | <<getting-started.adoc#getting-started-first-application-executable-jar, 第 2 部分>>
 
 
 
