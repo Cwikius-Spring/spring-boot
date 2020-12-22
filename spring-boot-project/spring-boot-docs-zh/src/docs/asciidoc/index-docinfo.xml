@@ -1,13 +1,22 @@
 <productname>Spring Boot</productname>
 <releaseinfo>{spring-boot-version}</releaseinfo>
 <copyright>
-	<year>2012-2020</year>
+<year>2012-2020</year>
 </copyright>
 <legalnotice>
-	<para>
-		Copies of this document may be made for your own use and for distribution to
-		others, provided that you do not charge any fee for such copies and further
-		provided that each copy contains this Copyright Notice, whether distributed in
-		print or electronically.
-	</para>
+<para>
+	Copies of this document may be made for your own use and for distribution to
+	others, provided that you do not charge any fee for such copies and further
+	provided that each copy contains this Copyright Notice, whether distributed in
+	print or electronically.
+</para>
 </legalnotice>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W3NL9V');
+</script>
+<!-- End Google Tag Manager -->
