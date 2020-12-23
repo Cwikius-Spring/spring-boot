@@ -59,42 +59,42 @@ NOTE: 所有 Spring Boot 的项目和内容都是开源的，包括这个文档�
 
 
 
-== Working with Spring Boot
-Ready to actually start using Spring Boot? <<using-spring-boot.adoc#using-boot, We have you covered>>:
+== 开始使用 Spring Boot
+准备开始使用 Spring Boot 了吗？ <<using-spring-boot.adoc#using-boot, 请访问我们提供的开始使用>>:
 
-* *Build systems:* <<using-spring-boot.adoc#using-boot-maven, Maven>> | <<using-spring-boot.adoc#using-boot-gradle, Gradle>> | <<using-spring-boot.adoc#using-boot-ant, Ant>> | <<using-spring-boot.adoc#using-boot-starter, Starters>>
-* *Best practices:* <<using-spring-boot.adoc#using-boot-structuring-your-code, Code Structure>> | <<using-spring-boot.adoc#using-boot-configuration-classes, @Configuration>> | <<using-spring-boot.adoc#using-boot-auto-configuration, @EnableAutoConfiguration>> | <<using-spring-boot.adoc#using-boot-spring-beans-and-dependency-injection, Beans and Dependency Injection>>
-* *Running your code:* <<using-spring-boot.adoc#using-boot-running-from-an-ide, IDE>> | <<using-spring-boot.adoc#using-boot-running-as-a-packaged-application, Packaged>> | <<using-spring-boot.adoc#using-boot-running-with-the-maven-plugin, Maven>> | <<using-spring-boot.adoc#using-boot-running-with-the-gradle-plugin, Gradle>>
-* *Packaging your app:* <<using-spring-boot.adoc#using-boot-packaging-for-production, Production jars>>
-* *Spring Boot CLI:* <<spring-boot-cli.adoc#cli, Using the CLI>>
-
-
-
-== Learning about Spring Boot Features
-Need more details about Spring Boot's core features?
-<<spring-boot-features.adoc#boot-features, The following content is for you>>:
-
-* *Core Features:* <<spring-boot-features.adoc#boot-features-spring-application, SpringApplication>> | <<spring-boot-features.adoc#boot-features-external-config, External Configuration>> | <<spring-boot-features.adoc#boot-features-profiles, Profiles>> | <<spring-boot-features.adoc#boot-features-logging, Logging>>
-* *Web Applications:* <<spring-boot-features.adoc#boot-features-spring-mvc, MVC>> | <<spring-boot-features.adoc#boot-features-embedded-container, Embedded Containers>>
-* *Working with data:* <<spring-boot-features.adoc#boot-features-sql, SQL>> | <<spring-boot-features.adoc#boot-features-nosql, NO-SQL>>
-* *Messaging:* <<spring-boot-features.adoc#boot-features-messaging, Overview>> | <<spring-boot-features.adoc#boot-features-jms, JMS>>
-* *Testing:* <<spring-boot-features.adoc#boot-features-testing, Overview>> | <<spring-boot-features.adoc#boot-features-testing-spring-boot-applications, Boot Applications>> | <<spring-boot-features.adoc#boot-features-test-utilities, Utils>>
-* *Extending:* <<spring-boot-features.adoc#boot-features-developing-auto-configuration, Auto-configuration>> | <<spring-boot-features.adoc#boot-features-condition-annotations, @Conditions>>
+* *构建系统：* <<using-spring-boot.adoc#using-boot-maven, Maven>> | <<using-spring-boot.adoc#using-boot-gradle, Gradle>> | <<using-spring-boot.adoc#using-boot-ant, Ant>> | <<using-spring-boot.adoc#using-boot-starter, Starters>>
+* *最佳实践：* <<using-spring-boot.adoc#using-boot-structuring-your-code, Code Structure>> | <<using-spring-boot.adoc#using-boot-configuration-classes, @Configuration>> | <<using-spring-boot.adoc#using-boot-auto-configuration, @EnableAutoConfiguration>> | <<using-spring-boot.adoc#using-boot-spring-beans-and-dependency-injection, Beans and Dependency Injection>>
+* *运行你的代码：* <<using-spring-boot.adoc#using-boot-running-from-an-ide, IDE>> | <<using-spring-boot.adoc#using-boot-running-as-a-packaged-application, Packaged>> | <<using-spring-boot.adoc#using-boot-running-with-the-maven-plugin, Maven>> | <<using-spring-boot.adoc#using-boot-running-with-the-gradle-plugin, Gradle>>
+* *打包你的应用：* <<using-spring-boot.adoc#using-boot-packaging-for-production, Production jars>>
+* *Spring Boot 命令行（CLI）：* <<spring-boot-cli.adoc#cli, 使用 CLI>>
 
 
 
-== Moving to Production
-When you are ready to push your Spring Boot application to production, we have <<production-ready-features.adoc#production-ready, some tricks>> that you might like:
+== 学习有关 Spring Boot 的特性
+需要了解更多有关 Spring Boot 的核心特性？
+<<spring-boot-features.adoc#boot-features, 下面的内容将会适合你进行阅读>>:
 
-* *Management endpoints:* <<production-ready-features.adoc#production-ready-endpoints, Overview>>
-* *Connection options:* <<production-ready-features.adoc#production-ready-monitoring, HTTP>> | <<production-ready-features.adoc#production-ready-jmx, JMX>>
-* *Monitoring:* <<production-ready-features.adoc#production-ready-metrics, Metrics>> | <<production-ready-features.adoc#production-ready-auditing, Auditing>> | <<production-ready-features.adoc#production-ready-http-tracing, HTTP Tracing>> | <<production-ready-features.adoc#production-ready-process-monitoring, Process>>
+* *核心特性：* <<spring-boot-features.adoc#boot-features-spring-application, SpringApplication>> | <<spring-boot-features.adoc#boot-features-external-config, External Configuration>> | <<spring-boot-features.adoc#boot-features-profiles, Profiles>> | <<spring-boot-features.adoc#boot-features-logging, Logging>>
+* *Web 应用程序（Applications）：* <<spring-boot-features.adoc#boot-features-spring-mvc, MVC>> | <<spring-boot-features.adoc#boot-features-embedded-container, Embedded Containers>>
+* *对数据进行处理：* <<spring-boot-features.adoc#boot-features-sql, SQL>> | <<spring-boot-features.adoc#boot-features-nosql, NO-SQL>>
+* *消息：* <<spring-boot-features.adoc#boot-features-messaging, Overview>> | <<spring-boot-features.adoc#boot-features-jms, JMS>>
+* *测试：* <<spring-boot-features.adoc#boot-features-testing, Overview>> | <<spring-boot-features.adoc#boot-features-testing-spring-boot-applications, Boot Applications>> | <<spring-boot-features.adoc#boot-features-test-utilities, Utils>>
+* *扩展：* <<spring-boot-features.adoc#boot-features-developing-auto-configuration, Auto-configuration>> | <<spring-boot-features.adoc#boot-features-condition-annotations, @Conditions>>
 
 
 
-== Advanced Topics
-Finally, we have a few topics for more advanced users:
+== 部署到生产系统中
+如果你已经准备将你的 Spring Boot 应用系统部署到生产环境中，我们提供了一些你可能喜欢的 <<production-ready-features.adoc#production-ready, 小技巧>> ：
 
-* *Spring Boot Applications Deployment:* <<deployment.adoc#cloud-deployment, Cloud Deployment>> | <<deployment.adoc#deployment-service, OS Service>>
-* *Build tool plugins:* <<build-tool-plugins.adoc#build-tool-plugins-maven-plugin, Maven>> | <<build-tool-plugins.adoc#build-tool-plugins-gradle-plugin, Gradle>>
-* *Appendix:* <<appendix-application-properties.adoc#common-application-properties,Application Properties>> | <<appendix-configuration-metadata.adoc#configuration-metadata,Configuration Metadata>> | <<appendix-auto-configuration-classes.adoc#auto-configuration-classes,Auto-configuration Classes>> | <<appendix-test-auto-configuration.adoc#test-auto-configuration,Test Auto-configuration Annotations>> | <<appendix-executable-jar-format.adoc#executable-jar,Executable Jars>> | <<appendix-dependency-versions.adoc#dependency-versions,Dependency Versions>>
+* *管理 endpoints：* <<production-ready-features.adoc#production-ready-endpoints, 概述>>
+* *连接选项：* <<production-ready-features.adoc#production-ready-monitoring, HTTP>> | <<production-ready-features.adoc#production-ready-jmx, JMX>>
+* *监控：* <<production-ready-features.adoc#production-ready-metrics, 监控参数（Metrics）>> | <<production-ready-features.adoc#production-ready-auditing, 审计（Auditing）>> | <<production-ready-features.adoc#production-ready-http-tracing, HTTP 跟踪（HTTP Tracing）>> | <<production-ready-features.adoc#production-ready-process-monitoring, 进程（Process）>>
+
+
+
+== 高级主题
+最后，针对高级用户，我们也准备了一些主题：
+
+* *Spring Boot 应用程序部署：* <<deployment.adoc#cloud-deployment, 云部署>> | <<deployment.adoc#deployment-service, 操作系统服务（OS Service）>>
+* *构建工具插件：* <<build-tool-plugins.adoc#build-tool-plugins-maven-plugin, Maven>> | <<build-tool-plugins.adoc#build-tool-plugins-gradle-plugin, Gradle>>
+* *附件：* <<appendix-application-properties.adoc#common-application-properties,应用属性（Application Properties）>> | <<appendix-configuration-metadata.adoc#configuration-metadata,Configuration Metadata>> | <<appendix-auto-configuration-classes.adoc#auto-configuration-classes,Auto-configuration Classes>> | <<appendix-test-auto-configuration.adoc#test-auto-configuration,Test Auto-configuration Annotations>> | <<appendix-executable-jar-format.adoc#executable-jar,可执行 Jars（Executable Jars）>> | <<appendix-dependency-versions.adoc#dependency-versions,依赖版本（Dependency Versions）>>
