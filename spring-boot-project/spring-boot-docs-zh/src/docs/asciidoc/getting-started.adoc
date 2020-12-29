@@ -2,28 +2,28 @@
 = Getting Started
 include::attributes.adoc[]
 
-If you are getting started with Spring Boot, or "`Spring`" in general, start by reading this section.
-It answers the basic "`what?`", "`how?`" and "`why?`" questions.
-It includes an introduction to Spring Boot, along with installation instructions.
-We then walk you through building your first Spring Boot application, discussing some core principles as we go.
+如果你现在正在开始使用 Spring Boot，或者有关 "`Spring`" 的相关内容，建议你开始阅读本中有关的内容。
+这个通常能够回答你有关一些的基本知识，包括有"`什么是（what?）`", "`如何开始（how?）`" and "`为什么（why?）`" 等有关的问题。
+这个部分包括有对 Spring Boot 的介绍，以及包括有安装的指南。
+我们将会和你一起构建你的第一个 Spring Boot 应用程序，然后讨论一些我们需要了解的核心概念。
 
 
 
 [[getting-started-introducing-spring-boot]]
-== Introducing Spring Boot
-Spring Boot helps you to create stand-alone, production-grade Spring-based Applications that you can run.
-We take an opinionated view of the Spring platform and third-party libraries, so that you can get started with minimum fuss.
-Most Spring Boot applications need very little Spring configuration.
+== Spring Boot 介绍
+Spring Boot 能够帮助你创建独立运行（stand-alone），基于 Spring 可在生产环境（production-grade）中运行的应用。
+在 Spring 官方的文档中对 Spring 平台和使用的一些第三方类库进行了一些说明描述，因此你可以使用这些只是能够在很短的时间内开始使用 Spring Boot。
+绝大部分的 Spring Boot 应用只需要一些很少的 Spring 配置就可以运行了。
 
-You can use Spring Boot to create Java applications that can be started by using `java -jar` or more traditional war deployments.
-We also provide a command line tool that runs "`spring scripts`".
+你可以使用 Spring Boot 来创建一个 Java 应用程序，这个 Java 应用程序可以使用 `java -jar` 来运行，同时也可以使用传统的 Web 部署（war deployments）。
+我们同时也提供了一个命令行工具来运行 "`spring scripts`"。
 
-Our primary goals are:
+我们主要的目的是：
 
-* Provide a radically faster and widely accessible getting-started experience for all Spring development.
-* Be opinionated out of the box but get out of the way quickly as requirements start to diverge from the defaults.
-* Provide a range of non-functional features that are common to large classes of projects (such as embedded servers, security, metrics, health checks, and externalized configuration).
-* Absolutely no code generation and no requirement for XML configuration.
+* 针对所有的 Spring 开发提供了一个广泛的快速和开始使用经验。
+* 因为开始默认需求和实际的开发有所出入，我们提供了开箱即用的能够，能够让你更快的适应你的业务。
+* 针对很多项目都需要的通用要求，我们也提供了一个广泛的非功能性特性（例如，嵌入式服务，安全性，矩阵，系统健康检查和外部扩展功能）。
+* 你完全可以不需要使用代码生成功能，也不需要对 XML 进行配置。
 
 
 
