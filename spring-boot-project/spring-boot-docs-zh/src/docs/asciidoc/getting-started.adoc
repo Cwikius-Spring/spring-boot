@@ -1,5 +1,5 @@
 [[getting-started]]
-= Getting Started
+= 开始使用
 include::attributes.adoc[]
 
 如果你现在正在开始使用 Spring Boot，或者有关 "`Spring`" 的相关内容，建议你开始阅读本中有关的内容。
@@ -28,30 +28,30 @@ Spring Boot 能够帮助你创建独立运行（stand-alone），基于 Spring �
 
 
 [[getting-started-system-requirements]]
-== System Requirements
-Spring Boot {spring-boot-version} requires https://www.java.com[Java 8] and is compatible up to Java 15 (included).
-{spring-framework-docs}/[Spring Framework {spring-framework-version}] or above is also required.
+== 系统要求
+Spring Boot {spring-boot-version} 版本要求至少 https://www.java.com[Java 8] 及其以上版本，目前最高能够支持到 Java 15 （包含 15）的版本。
+{spring-framework-docs}/[Spring 框架（Framework） {spring-framework-version}] 的版本或者以上的版本是必须的。
 
-Explicit build support is provided for the following build tools:
+能够被下面的编译工具支持：
 
 |===
-| Build Tool | Version
+| 编译工具 | 版本
 
 | Maven
 | 3.3+
 
 | Gradle
-| 6 (6.3 or later). 5.6.x is also supported but in a deprecated form
+| 6 (6.3 或者后续版本)。 5.6.x 也是能够被支持的，但是已经准备开始不被兼容了。
 |===
 
 
 
 [[getting-started-system-requirements-servlet-containers]]
-=== Servlet Containers
-Spring Boot supports the following embedded servlet containers:
+=== Servlet 容器
+Spring Boot 能够支持下面的嵌入 Servlet 容器版本：
 
 |===
-| Name | Servlet Version
+| 名字 | Servlet 版本
 
 | Tomcat 9.0
 | 4.0
@@ -63,7 +63,7 @@ Spring Boot supports the following embedded servlet containers:
 | 4.0
 |===
 
-You can also deploy Spring Boot applications to any Servlet 3.1+ compatible container.
+当然，你也可以将 Spring Boot 应用部署到任何能够兼容 3.1+ 容器版本的服务器上。
 
 
 
