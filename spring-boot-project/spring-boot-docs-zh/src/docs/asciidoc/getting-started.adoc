@@ -68,47 +68,47 @@ Spring Boot 能够支持下面的嵌入 Servlet 容器版本：
 
 
 [[getting-started-installing-spring-boot]]
-== Installing Spring Boot
-Spring Boot can be used with "`classic`" Java development tools or installed as a command line tool.
-Either way, you need https://www.java.com[Java SDK v1.8] or higher.
-Before you begin, you should check your current Java installation by using the following command:
+== 安装 Spring Boot
+Spring Boot 可以通过使用 "`传统（classic）`" 的 Java 开发工具或者安装一个命令行工具（command line tool）。
+不管通过何种方式进行安装，你都需要  https://www.java.com[Java SDK v1.8] 或者更高的版本。
+在进行安装之前，你需要通过下面的命令来检查你的环境中是否已经有安装正确的 JDK 版本。
 
 [indent=0]
 ----
 	$ java -version
 ----
 
-If you are new to Java development or if you want to experiment with Spring Boot, you might want to try the <<getting-started-installing-the-cli, Spring Boot CLI>> (Command Line Interface) first.
-Otherwise, read on for "`classic`" installation instructions.
+如果你是一个 Java 开发的初学者或者希望对 Spring Boot 有所了解，你可能希望尝试下官方提供的  <<getting-started-installing-the-cli, Spring Boot CLI>> (命令行工具 Command Line Interface) 。
+否则的话，你可以尝试从 "`传统（classic）`" 的安装介绍中开始。
 
 
 
 [[getting-started-installation-instructions-for-java]]
-=== Installation Instructions for the Java Developer
-You can use Spring Boot in the same way as any standard Java library.
-To do so, include the appropriate `+spring-boot-*.jar+` files on your classpath.
-Spring Boot does not require any special tools integration, so you can use any IDE or text editor.
-Also, there is nothing special about a Spring Boot application, so you can run and debug a Spring Boot application as you would any other Java program.
+=== 针对 Java Developer 的安装指南
+你可以与任何 Java 标准库相同的方式来使用 Spring Boot。
+为了能够让你的项目使用 Spring Boot ，将 `+spring-boot-*.jar+` 文件放到你项目中正确的 classpath 中。
+Spring Boot 是不需要任何特殊的工具来进行整合的，所以你可以方便的使用任何 IDE 或者 文本编辑器。
+另外的，针对 Spring Boot 应用程序也没有任何特殊的地方，你可以和你以往对 Java 进行开发的流程一样对 Spring Boot 应用进行调试（debug）。
 
-Although you _could_ copy Spring Boot jars, we generally recommend that you use a build tool that supports dependency management (such as Maven or Gradle).
+尽管，你 _可以使用_ 拷贝 Spring Boot 的 Jar 包到你的项目路径中来运行项目，我们还是非常建议你使用一些构建工具来对依赖进行管理（例如 Maven 或者 Gradle）。
 
 
 
 [[getting-started-maven-installation]]
-==== Maven Installation
-Spring Boot is compatible with Apache Maven 3.3 or above.
-If you do not already have Maven installed, you can follow the instructions at https://maven.apache.org.
+==== Maven 安装
+Spring Boot 能够与 Apache Maven 3.3 及其以上的版本进行兼容。
+如果你的计算机或者环境中还没有安装 Maven ，请参考 https://maven.apache.org 页面中的内容来对 Maven 进行安装。
 
-TIP: On many operating systems, Maven can be installed with a package manager.
-If you use OSX Homebrew, try `brew install maven`.
-Ubuntu users can run `sudo apt-get install maven`.
-Windows users with https://chocolatey.org/[Chocolatey] can run `choco install maven` from an elevated (administrator) prompt.
+TIP: 在很多操作系统中，Maven 是可以通过一个包管理工具来进行安装的。
+如果你使用的是 OSX Homebrew 操作系统，尝试运行 `brew install maven` 来进行安装。
+Ubuntu 的用户可以通过运行 `sudo apt-get install maven` 来进行安装
+Windows 用户也可以使用 https://chocolatey.org/[Chocolatey] 来进行安装，你需要运行 `choco install maven` 命令（这个命令运行需要具有管理员权限）。
 
-Spring Boot dependencies use the `org.springframework.boot` `groupId`.
-Typically, your Maven POM file inherits from the `spring-boot-starter-parent` project and declares dependencies to one or more <<using-spring-boot.adoc#using-boot-starter,"`Starters`">>.
-Spring Boot also provides an optional <<build-tool-plugins.adoc#build-tool-plugins-maven-plugin, Maven plugin>> to create executable jars.
+Spring Boot 的依赖使用 `org.springframework.boot` `groupId`。
+通常来说，你的 Maven POM 文件需要继承 `spring-boot-starter-parent` 项目，同时还需要声明一个或者多个 <<using-spring-boot.adoc#using-boot-starter,"`Starters`">>。
+Spring Boot 同时也提供了一个可选项的 <<build-tool-plugins.adoc#build-tool-plugins-maven-plugin, Maven 插件（plugin）>> 来被用来创建可执行的 Jars。
 
-More details on getting started with Spring Boot and Maven can be found in the {spring-boot-maven-plugin-docs}#getting-started[Getting Started section] of the Maven plugin's reference guide.
+更多有关开始使用 Spring Boot 和 Maven 的相关文章和内容可以在页面 {spring-boot-maven-plugin-docs}#getting-started[开始使用部分] 中找到。同时有关 Maven 插件的参考页可以在这里找到。
 
 
 
