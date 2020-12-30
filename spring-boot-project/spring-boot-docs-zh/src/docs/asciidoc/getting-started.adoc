@@ -104,7 +104,7 @@ TIP: 在很多操作系统中，Maven 是可以通过一个包管理工具来进
 Ubuntu 的用户可以通过运行 `sudo apt-get install maven` 来进行安装
 Windows 用户也可以使用 https://chocolatey.org/[Chocolatey] 来进行安装，你需要运行 `choco install maven` 命令（这个命令运行需要具有管理员权限）。
 
-Spring Boot 的依赖使用 `org.springframework.boot` `groupId`。
+Spring Boot 的依赖使用 `org.springframework.boot` `groupId` 来声明。
 通常来说，你的 Maven POM 文件需要继承 `spring-boot-starter-parent` 项目，同时还需要声明一个或者多个 <<using-spring-boot.adoc#using-boot-starter,"`Starters`">>。
 Spring Boot 同时也提供了一个可选项的 <<build-tool-plugins.adoc#build-tool-plugins-maven-plugin, Maven 插件（plugin）>> 来被用来创建可执行的 Jars。
 
@@ -113,28 +113,28 @@ Spring Boot 同时也提供了一个可选项的 <<build-tool-plugins.adoc#build
 
 
 [[getting-started-gradle-installation]]
-==== Gradle Installation
-Spring Boot is compatible with Gradle 6 (6.3 or later).
-Gradle 5.6.x is also supported but this support is deprecated and will be removed in a future release.
-If you do not already have Gradle installed, you can follow the instructions at https://gradle.org.
+==== Gradle 安装
+Spring Boot 能够兼容 Gradle 6 （6.3 或者后续版本）。
+Gradle 5.6.x 也是能够被支持的，但是这个支持将会在后续的发布中删除。
+如果你的计算机中还没有安装 Gradle ，请参考页面 https://gradle.org 中的内容来安装 Gradle。
 
-Spring Boot dependencies can be declared by using the `org.springframework.boot` `group`.
-Typically, your project declares dependencies to one or more <<using-spring-boot.adoc#using-boot-starter, "`Starters`">>.
-Spring Boot provides a useful <<build-tool-plugins.adoc#build-tool-plugins-gradle-plugin, Gradle plugin>> that can be used to simplify dependency declarations and to create executable jars.
+Spring Boot 的依赖使用 `org.springframework.boot` `group` 来声明。
+通常来说，你的项目需要声明一个或者多个  <<using-spring-boot.adoc#using-boot-starter, "`Starters`">>。
+Spring Boot 同时也提供了一个 <<build-tool-plugins.adoc#build-tool-plugins-gradle-plugin, Gradle 插件（plugin）>> ，这个插件能够对依赖声明进行简化，同时被用来创建一个可执行的 Jars。
 
 .Gradle Wrapper
 ****
-The Gradle Wrapper provides a nice way of "`obtaining`" Gradle when you need to build a project.
-It is a small script and library that you commit alongside your code to bootstrap the build process.
-See {gradle-docs}/gradle_wrapper.html for details.
+Gradle Wrapper 能够为你再构建一个项目的时候，提供了一个非常简单的方式来  "`获得`" Gradle。
+Gradle Wrapper 是一个小的脚本和库，你可以通过这个脚本和库来启动构建进程，通常并不需要安装 Gradle。
+请查看 {gradle-docs}/gradle_wrapper.html 页面来获得更多的细节。
 ****
 
-More details on getting started with Spring Boot and Gradle can be found in the {spring-boot-gradle-plugin-docs}#getting-started[Getting Started section] of the Gradle plugin's reference guide.
+更多有关开始使用 Spring Boot 和 Gradle 的相关文章和内容可以在页面 {spring-boot-gradle-plugin-docs}#getting-started[开始使用部分] 中找到。同时有关 Gradle 插件的参考页可以在这里找到。
 
 
 
 [[getting-started-installing-the-cli]]
-=== Installing the Spring Boot CLI
+=== 安装 Spring Boot 命令行
 The Spring Boot CLI (Command Line Interface) is a command line tool that you can use to quickly prototype with Spring.
 It lets you run https://groovy-lang.org/[Groovy] scripts, which means that you have a familiar Java-like syntax without so much boilerplate code.
 
@@ -143,7 +143,7 @@ You do not need to use the CLI to work with Spring Boot, but it is definitely th
 
 
 [[getting-started-manual-cli-installation]]
-==== Manual Installation
+==== 手工安装
 You can download the Spring CLI distribution from the Spring software repository:
 
 * https://repo.spring.io/{spring-boot-artifactory-repo}/org/springframework/boot/spring-boot-cli/{spring-boot-version}/spring-boot-cli-{spring-boot-version}-bin.zip[spring-boot-cli-{spring-boot-version}-bin.zip]
@@ -159,7 +159,7 @@ Alternatively, you can use `java -jar` with the `.jar` file (the script helps yo
 
 
 [[getting-started-sdkman-cli-installation]]
-==== Installation with SDKMAN!
+==== 使用 SDKMAN! 安装
 SDKMAN! (The Software Development Kit Manager) can be used for managing multiple versions of various binary SDKs, including Groovy and the Spring Boot CLI.
 Get SDKMAN! from https://sdkman.io and install Spring Boot by using the following commands:
 
@@ -205,7 +205,7 @@ You can see it by running the following command:
 
 
 [[getting-started-homebrew-cli-installation]]
-==== OSX Homebrew Installation
+==== OSX Homebrew 安装
 If you are on a Mac and use https://brew.sh/[Homebrew], you can install the Spring Boot CLI by using the following commands:
 
 [indent=0]
@@ -222,7 +222,7 @@ In that case, run `brew update` and try again.
 
 
 [[getting-started-macports-cli-installation]]
-==== MacPorts Installation
+==== MacPorts 安装
 If you are on a Mac and use https://www.macports.org/[MacPorts], you can install the Spring Boot CLI by using the following command:
 
 [indent=0]
@@ -233,7 +233,7 @@ If you are on a Mac and use https://www.macports.org/[MacPorts], you can install
 
 
 [[getting-started-cli-command-line-completion]]
-==== Command-line Completion
+==== Command-line 完成
 The Spring Boot CLI includes scripts that provide command completion for the https://en.wikipedia.org/wiki/Bash_%28Unix_shell%29[BASH] and https://en.wikipedia.org/wiki/Z_shell[zsh] shells.
 You can `source` the script (also named `spring`) in any shell or put it in your personal or system-wide bash completion initialization.
 On a Debian system, the system-wide scripts are in `/shell-completion/bash` and all scripts in that directory are executed when a new shell starts.
@@ -251,7 +251,7 @@ NOTE: If you install the Spring Boot CLI by using Homebrew or MacPorts, the comm
 
 
 [[getting-started-scoop-cli-installation]]
-==== Windows Scoop Installation
+==== Windows Scoop 安装
 If you are on a Windows and use https://scoop.sh/[Scoop], you can install the Spring Boot CLI by using the following commands:
 
 [indent=0]
@@ -268,7 +268,7 @@ In that case, run `scoop update` and try again.
 
 
 [[getting-started-cli-example]]
-==== Quick-start Spring CLI Example
+==== Spring CLI 快速使用示例
 You can use the following web application to test your installation.
 To start, create a file called `app.groovy`, as follows:
 
