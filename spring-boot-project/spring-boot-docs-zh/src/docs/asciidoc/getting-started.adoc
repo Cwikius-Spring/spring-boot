@@ -183,7 +183,7 @@ Groovy 和 Spring Boot CLI 都已经部署到 SDKMAN! 中了，在你本地计�
 	Spring CLI v{spring-boot-version}
 ----
 
-上面的命令显示了一个被命名为 `dev` 的 `spring` 实例安装的安装命令和安装校验。同时路径（Path）还指向到了构建的位置，因此每次通过代码重后，你都会使用最新的 `spring` 版本。
+上面的命令显示了一个被命名为 `dev` 的 `spring` 实例安装的安装命令和安装校验。同时路径（Path）还指向到了构建的位置，因此每次通过代码重构后，你都会使用最新的 `spring` 版本。
 
 如果你需要检查安装的版本和相关的配置，请运行下面的命令：
 
@@ -218,9 +218,8 @@ Groovy 和 Spring Boot CLI 都已经部署到 SDKMAN! 中了，在你本地计�
 
 Homebrew 将会把 `spring` 安装到 `/usr/local/bin` 目录下。
 
-NOTE: 如果你在安装的过程中出现了一些异常，或者显示包没有找到，或者没有办法进行安装，那么很有可能是安装的 brew 版本过老，需要进行更新了。If you do not see the formula, your installation of brew might be out-of-date.
+NOTE: 如果你在安装的过程中出现了一些异常，或者显示包没有找到，或者没有办法进行安装，那么很有可能是安装的 brew 版本过老，需要进行更新了。
 你可以直接运行 `brew update` 命令先进行更新，然后再次尝试进行安装。
-
 
 
 [[getting-started-macports-cli-installation]]
@@ -235,7 +234,7 @@ If you are on a Mac and use https://www.macports.org/[MacPorts], you can install
 
 
 [[getting-started-cli-command-line-completion]]
-==== Command-line 完成
+==== Command-line 自动完成
 The Spring Boot CLI includes scripts that provide command completion for the https://en.wikipedia.org/wiki/Bash_%28Unix_shell%29[BASH] and https://en.wikipedia.org/wiki/Z_shell[zsh] shells.
 You can `source` the script (also named `spring`) in any shell or put it in your personal or system-wide bash completion initialization.
 On a Debian system, the system-wide scripts are in `/shell-completion/bash` and all scripts in that directory are executed when a new shell starts.
