@@ -208,7 +208,7 @@ Groovy 和 Spring Boot CLI 都已经部署到 SDKMAN! 中了，在你本地计�
 
 [[getting-started-homebrew-cli-installation]]
 ==== OSX Homebrew 安装
-如果你是 Mac 的用户，并且在你的 Mac 计算机上已经安装了 https://brew.sh/[Homebrew] 应用的话，你可以通过使用下面的命令来安装 Spring Boot CLI：
+如果你是 Mac 的用户，并且在你的 Mac 计算机上已经安装了 https://brew.sh/[Homebrew] 应用的话，你可以通过使用下面的命令行工具来安装 Spring Boot CLI：
 
 [indent=0]
 ----
@@ -224,46 +224,36 @@ NOTE: 如果你在安装的过程中出现了一些异常，或者显示包没�
 
 [[getting-started-macports-cli-installation]]
 ==== MacPorts 安装
-如果你是 Mac 的用户，你也可以使用 https://www.macports.org/[MacPorts] 来进行安装。 你可以通过使用下面的命令来安装 Spring Boot CLI：
+If you are on a Mac and use https://www.macports.org/[MacPorts], you can install the Spring Boot CLI by using the following command:
 
 [indent=0]
 ----
 	$ sudo port install spring-boot-cli
 ----
-MacPorts 和 Homebrew 其实是类似的一个包管理工具。
 
-Mac 算是BSD的一个变种。所以，BSD 的包管理软件 port 被移植到 Mac 上就显的理所当然了。 MacPorts 的工作方式是下载源代码后在本地编译。
-MacPorts 的理念是尽量减少对系统现有库的依赖。所以，第一次用 MacPorts 的时候，需要很长时间让 MacPorts 重新 build 整个基本库。
-
-Homebrew  这个比较新，是在Lion之后才兴起的。 工作方式和 MacPorts类似，也是下载源代码后并在本地编译安装。
-
-Homebrew 与 MacPorts 有两个根本的区别。
-
-* Homebrew 的理念是尽量使用系统现有的库。这样可以大大的减少编译时间。
-* package都安装到 /usr/local 下面。 这两点和 MacPorts 是完全相反的。
 
 
 [[getting-started-cli-command-line-completion]]
 ==== Command-line 自动完成
-Spring Boot CLI 包含有脚本能够提供命令行的自动完成。有关自动完成的定义请参考 https://en.wikipedia.org/wiki/Bash_%28Unix_shell%29[BASH] 和 https://en.wikipedia.org/wiki/Z_shell[zsh] 页面中的内容。
-你可以下载 `spring` 命令行的 `源代码` 脚本到任何 shell 环境中，并且添加到你自己或者系统全局的 bash 自动完成初始化。
-在 Debian 操作系统中，基于操作系统的全局脚本位于 `/shell-completion/bash` 目录中。所有位于这个目录中的脚本将会在新的 shell 启动后被执行。
-例如，如果你希望通过使用 SDKMAN! 来手动运行一个 Spring 的脚本来进行安装，你可以尝试使用下面的命令：
+The Spring Boot CLI includes scripts that provide command completion for the https://en.wikipedia.org/wiki/Bash_%28Unix_shell%29[BASH] and https://en.wikipedia.org/wiki/Z_shell[zsh] shells.
+You can `source` the script (also named `spring`) in any shell or put it in your personal or system-wide bash completion initialization.
+On a Debian system, the system-wide scripts are in `/shell-completion/bash` and all scripts in that directory are executed when a new shell starts.
+For example, to run the script manually if you have installed by using SDKMAN!, use the following commands:
 
 [indent=0]
 ----
 	$ . ~/.sdkman/candidates/springboot/current/shell-completion/bash/spring
-	$ spring <敲一下 TAB 键>
+	$ spring <HIT TAB HERE>
 	  grab  help  jar  run  test  version
 ----
 
-NOTE: 如果你是通过使用 Homebrew 或 MacPorts 来安装 Spring Boot CLI 的话，脚本命令行的工具将会自动注册到你的 shell 中。
+NOTE: If you install the Spring Boot CLI by using Homebrew or MacPorts, the command-line completion scripts are automatically registered with your shell.
 
 
 
 [[getting-started-scoop-cli-installation]]
 ==== Windows Scoop 安装
-如果你使用的是 Windows 操作系统，你可以使用 https://scoop.sh/[Scoop] 来进行安装。 你可以通过使用下面的命令来安装 Spring Boot CLI：
+If you are on a Windows and use https://scoop.sh/[Scoop], you can install the Spring Boot CLI by using the following commands:
 
 [indent=0]
 ----
@@ -271,24 +261,17 @@ NOTE: 如果你是通过使用 Homebrew 或 MacPorts 来安装 Spring Boot CLI �
 	> scoop install springboot
 ----
 
-Scoop 将会把 `spring` 安装到  `~/scoop/apps/springboot/current/bin` 目录中。
+Scoop installs `spring` to `~/scoop/apps/springboot/current/bin`.
 
-NOTE: 如果你在安装的过程中出现了一些异常，或者没有看到 app 的 manifest，那么很有可能是因为你安装的 scoop 版本过老而需要更新了。
-你可以直接运行 `scoop update` 命令先进行更新，然后再次尝试进行安装。
-
-Scoop 可以简单理解为一个在 Windows 中可以使用的包管理工具，这个包管理工具需要在 PowerShell 中运行。
-
-我们熟知的 Ubuntu上 的apt-get（在 Ubuntu16 以上可以直接用apt了），MacOS上的 homebrew 都是很优秀的包管理工具。如果你使用的是 CentOS 或者 REHL 的话，我们应该非常熟悉使用 yum 或者 dnf 来进行安装包。
-
-但是在 Windows 平台下，由于 Windows 的开放性，大家都是去各种网站上下载程序，一些软件开发环境的程序也很杂乱，到处都是各种下载链接，容易中病毒还浪费时间。
-所以我们有开发者想要 在 Windows 平台上开发包管理工具 —— scoop，简单理解过来就是一个可以在 Windows 平台下使用 yum 或者 dnf 的工具。
+NOTE: If you do not see the app manifest, your installation of scoop might be out-of-date.
+In that case, run `scoop update` and try again.
 
 
 
 [[getting-started-cli-example]]
 ==== Spring CLI 快速使用示例
-你可以使用下面的命令行来创建 Web 应用程序来测试你的安装是否正常。
-创建一个称为 `app.groovy` 的文件，文件的内容如下：
+You can use the following web application to test your installation.
+To start, create a file called `app.groovy`, as follows:
 
 [source,groovy,indent=0,subs="verbatim,quotes,attributes"]
 ----
@@ -303,16 +286,18 @@ Scoop 可以简单理解为一个在 Windows 中可以使用的包管理工具�
 	}
 ----
 
-然后从 Shell 中运行下面的命令：
+Then run it from a shell, as follows:
 
 [indent=0]
 ----
 	$ spring run app.groovy
 ----
 
-NOTE: 当第一次运行你的应用程序的时候可能需要的时间比较长，这是因为系统需要从远程下载所需要的依赖。在后续运行的时候就会更加快速了。
+NOTE: The first run of your application is slow, as dependencies are downloaded.
+Subsequent runs are much quicker.
 
-在任何你喜欢的浏览器的地址栏中输入下面的地址：`http://localhost:8080` ，然后应该能够在浏览器中看到下面的输出：
+Open `http://localhost:8080` in your favorite web browser.
+You should see the following output:
 
 [indent=0]
 ----
@@ -322,13 +307,13 @@ NOTE: 当第一次运行你的应用程序的时候可能需要的时间比较�
 
 
 [[getting-started-upgrading-from-an-earlier-version]]
-=== 从早期的 Spring Boot 版本进行升级
-如果你打算从 Spring Boot 的 `1.x` 版本进行升级的话，请查看  {github-wiki}/Spring-Boot-2.0-Migration-Guide["项目 WIKI 页面中`合并指南`" ] 的内容来了解有关升级的详细指南。
-请查看 {github-wiki}["`发布日志（release notes）`"] 页面中的内容来了解针对每一个发行版本的 "`新的和值得注意的特性`" 的信息。
+=== Upgrading from an Earlier Version of Spring Boot
+If you are upgrading from the `1.x` release of Spring Boot, check the {github-wiki}/Spring-Boot-2.0-Migration-Guide["`migration guide`" on the project wiki] that provides detailed upgrade instructions.
+Check also the {github-wiki}["`release notes`"] for a list of "`new and noteworthy`" features for each release.
 
-当升级到一个新的特性发布版本的时候，一些属性可能需要被重命名或者被删除。
-Spring Boot 提供了一个能够分析你的应用程序的工具，你可以通过这个工具来打印出应用的环境和启动诊断工具，来确定 Spring Boot 的属性配置正确和为你提供调试信息。
-如果你希望启用上面的这个特性的话，请将下面的依赖添加到你的项目中：
+When upgrading to a new feature release, some properties may have been renamed or removed.
+Spring Boot provides a way to analyze your application's environment and print diagnostics at startup, but also temporarily migrate properties at runtime for you.
+To enable that feature, add the following dependency to your project:
 
 [source,xml,indent=0]
 ----
@@ -339,12 +324,12 @@ Spring Boot 提供了一个能够分析你的应用程序的工具，你可以�
 	</dependency>
 ----
 
-WARNING: 添加到环境中的属性，例如当使用 `@PropertySource` 的时候，将会在诊断工具中显示出来。
+WARNING: Properties that are added late to the environment, such as when using `@PropertySource`, will not be taken into account.
 
-NOTE: 一旦你完成了合并，请确定将上面的依赖从你的项目中删除。
+NOTE: Once you're done with the migration, please make sure to remove this module from your project's dependencies.
 
-如果你希望对已经安装的 CLI 工具进行升级的话，请使用正确的升级工具或者命令（例如，可以使用 `brew upgrade`）。
-如果你是通过手动方式安装 CLI 的话，请参考 <<getting-started-manual-cli-installation, 标准的安装>>，请注意，当你更新你的 `PATH` 环境变量来删除任何可能存在的老的参考和应用。
+To upgrade an existing CLI installation, use the appropriate package manager command (for example, `brew upgrade`).
+If you manually installed the CLI, follow the <<getting-started-manual-cli-installation, standard instructions>>, remembering to update your `PATH` environment variable to remove any older references.
 
 
 
