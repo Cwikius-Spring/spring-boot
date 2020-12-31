@@ -208,7 +208,7 @@ Groovy 和 Spring Boot CLI 都已经部署到 SDKMAN! 中了，在你本地计�
 
 [[getting-started-homebrew-cli-installation]]
 ==== OSX Homebrew 安装
-If you are on a Mac and use https://brew.sh/[Homebrew], you can install the Spring Boot CLI by using the following commands:
+如果你是 Mac 的用户，并且在你的 Mac 计算机上已经安装了 https://brew.sh/[Homebrew] 应用的话，你可以通过使用下面的命令行工具来安装 Spring Boot CLI：
 
 [indent=0]
 ----
@@ -216,10 +216,10 @@ If you are on a Mac and use https://brew.sh/[Homebrew], you can install the Spri
 	$ brew install springboot
 ----
 
-Homebrew installs `spring` to `/usr/local/bin`.
+Homebrew 将会把 `spring` 安装到 `/usr/local/bin` 目录下。
 
-NOTE: If you do not see the formula, your installation of brew might be out-of-date.
-In that case, run `brew update` and try again.
+NOTE: 如果你在安装的过程中出现了一些异常，或者显示包没有找到，或者没有办法进行安装，那么很有可能是安装的 brew 版本过老，需要进行更新了。If you do not see the formula, your installation of brew might be out-of-date.
+你可以直接运行 `brew update` 命令先进行更新，然后再次尝试进行安装。
 
 
 
