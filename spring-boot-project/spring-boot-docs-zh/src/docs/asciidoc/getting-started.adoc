@@ -245,19 +245,19 @@ Homebrew 与 MacPorts 有两个根本的区别。
 
 [[getting-started-cli-command-line-completion]]
 ==== Command-line 自动完成
-The Spring Boot CLI includes scripts that provide command completion for the https://en.wikipedia.org/wiki/Bash_%28Unix_shell%29[BASH] and https://en.wikipedia.org/wiki/Z_shell[zsh] shells.
-You can `source` the script (also named `spring`) in any shell or put it in your personal or system-wide bash completion initialization.
-On a Debian system, the system-wide scripts are in `/shell-completion/bash` and all scripts in that directory are executed when a new shell starts.
-For example, to run the script manually if you have installed by using SDKMAN!, use the following commands:
+Spring Boot CLI 包含有脚本能够提供命令行的自动完成。有关自动完成的定义请参考 https://en.wikipedia.org/wiki/Bash_%28Unix_shell%29[BASH] 和 https://en.wikipedia.org/wiki/Z_shell[zsh] 页面中的内容。
+你可以下载 `spring` 命令行的 `源代码` 脚本到任何 shell 环境中，并且添加到你自己或者系统全局的 bash 自动完成初始化。
+在 Debian 操作系统中，基于操作系统的全局脚本位于 `/shell-completion/bash` 目录中。所有位于这个目录中的脚本将会在新的 shell 启动后被执行。
+例如，如果你希望通过使用 SDKMAN! 来手动运行一个 Spring 的脚本来进行安装，你可以尝试使用下面的命令：
 
 [indent=0]
 ----
 	$ . ~/.sdkman/candidates/springboot/current/shell-completion/bash/spring
-	$ spring <HIT TAB HERE>
+	$ spring <敲一下 TAB 键>
 	  grab  help  jar  run  test  version
 ----
 
-NOTE: If you install the Spring Boot CLI by using Homebrew or MacPorts, the command-line completion scripts are automatically registered with your shell.
+NOTE: 如果你是通过使用 Homebrew 或 MacPorts 来安装 Spring Boot CLI 的话，脚本命令行的工具将会自动注册到你的 shell 中。
 
 
 
