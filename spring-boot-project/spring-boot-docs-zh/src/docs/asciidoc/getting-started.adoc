@@ -183,7 +183,7 @@ Groovy 和 Spring Boot CLI 都已经部署到 SDKMAN! 中了，在你本地计�
 	Spring CLI v{spring-boot-version}
 ----
 
-上面的命令显示了一个被命名为 `dev` 的 `spring` 实例安装的安装命令和安装校验。同时路径（Path）还指向到了构建的位置，因此每次通过代码重后，你都会使用最新的 `spring` 版本。
+上面的命令显示了一个被命名为 `dev` 的 `spring` 实例安装的安装命令和安装校验。同时路径（Path）还指向到了构建的位置，因此每次通过代码重构后，你都会使用最新的 `spring` 版本。
 
 如果你需要检查安装的版本和相关的配置，请运行下面的命令：
 
@@ -208,7 +208,7 @@ Groovy 和 Spring Boot CLI 都已经部署到 SDKMAN! 中了，在你本地计�
 
 [[getting-started-homebrew-cli-installation]]
 ==== OSX Homebrew 安装
-如果你是 Mac 的用户，并且在你的 Mac 计算机上已经安装了 https://brew.sh/[Homebrew] 应用的话，你可以通过使用下面的命令行工具来安装 Spring Boot CLI：
+如果你是 Mac 的用户，并且在你的 Mac 计算机上已经安装了 https://brew.sh/[Homebrew] 应用的话，你可以通过使用下面的命令来安装 Spring Boot CLI：
 
 [indent=0]
 ----
@@ -218,37 +218,46 @@ Groovy 和 Spring Boot CLI 都已经部署到 SDKMAN! 中了，在你本地计�
 
 Homebrew 将会把 `spring` 安装到 `/usr/local/bin` 目录下。
 
-NOTE: 如果你在安装的过程中出现了一些异常，或者显示包没有找到，或者没有办法进行安装，那么很有可能是安装的 brew 版本过老，需要进行更新了。If you do not see the formula, your installation of brew might be out-of-date.
+NOTE: 如果你在安装的过程中出现了一些异常，或者显示包没有找到，或者没有办法进行安装，那么很有可能是安装的 brew 版本过老，需要进行更新了。
 你可以直接运行 `brew update` 命令先进行更新，然后再次尝试进行安装。
-
 
 
 [[getting-started-macports-cli-installation]]
 ==== MacPorts 安装
-If you are on a Mac and use https://www.macports.org/[MacPorts], you can install the Spring Boot CLI by using the following command:
+如果你是 Mac 的用户，你也可以使用 https://www.macports.org/[MacPorts] 来进行安装。 你可以通过使用下面的命令来安装 Spring Boot CLI：
 
 [indent=0]
 ----
 	$ sudo port install spring-boot-cli
 ----
+MacPorts 和 Homebrew 其实是类似的一个包管理工具。
 
+Mac 算是BSD的一个变种。所以，BSD 的包管理软件 port 被移植到 Mac 上就显的理所当然了。 MacPorts 的工作方式是下载源代码后在本地编译。
+MacPorts 的理念是尽量减少对系统现有库的依赖。所以，第一次用 MacPorts 的时候，需要很长时间让 MacPorts 重新 build 整个基本库。
+
+Homebrew  这个比较新，是在Lion之后才兴起的。 工作方式和 MacPorts类似，也是下载源代码后并在本地编译安装。
+
+Homebrew 与 MacPorts 有两个根本的区别。
+
+* Homebrew 的理念是尽量使用系统现有的库。这样可以大大的减少编译时间。
+* package都安装到 /usr/local 下面。 这两点和 MacPorts 是完全相反的。
 
 
 [[getting-started-cli-command-line-completion]]
-==== Command-line 完成
-The Spring Boot CLI includes scripts that provide command completion for the https://en.wikipedia.org/wiki/Bash_%28Unix_shell%29[BASH] and https://en.wikipedia.org/wiki/Z_shell[zsh] shells.
-You can `source` the script (also named `spring`) in any shell or put it in your personal or system-wide bash completion initialization.
-On a Debian system, the system-wide scripts are in `/shell-completion/bash` and all scripts in that directory are executed when a new shell starts.
-For example, to run the script manually if you have installed by using SDKMAN!, use the following commands:
+==== Command-line 自动完成
+Spring Boot CLI 包含有脚本能够提供命令行的自动完成。有关自动完成的定义请参考 https://en.wikipedia.org/wiki/Bash_%28Unix_shell%29[BASH] 和 https://en.wikipedia.org/wiki/Z_shell[zsh] 页面中的内容。
+你可以下载 `spring` 命令行的 `源代码` 脚本到任何 shell 环境中，并且添加到你自己或者系统全局的 bash 自动完成初始化。
+在 Debian 操作系统中，基于操作系统的全局脚本位于 `/shell-completion/bash` 目录中。所有位于这个目录中的脚本将会在新的 shell 启动后被执行。
+例如，如果你希望通过使用 SDKMAN! 来手动运行一个 Spring 的脚本来进行安装，你可以尝试使用下面的命令：
 
 [indent=0]
 ----
 	$ . ~/.sdkman/candidates/springboot/current/shell-completion/bash/spring
-	$ spring <HIT TAB HERE>
+	$ spring <敲一下 TAB 键>
 	  grab  help  jar  run  test  version
 ----
 
-NOTE: If you install the Spring Boot CLI by using Homebrew or MacPorts, the command-line completion scripts are automatically registered with your shell.
+NOTE: 如果你是通过使用 Homebrew 或 MacPorts 来安装 Spring Boot CLI 的话，脚本命令行的工具将会自动注册到你的 shell 中。
 
 
 
