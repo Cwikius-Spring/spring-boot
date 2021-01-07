@@ -322,13 +322,13 @@ NOTE: 当第一次运行你的应用程序的时候可能需要的时间比较�
 
 
 [[getting-started-upgrading-from-an-earlier-version]]
-=== Upgrading from an Earlier Version of Spring Boot
-If you are upgrading from the `1.x` release of Spring Boot, check the {github-wiki}/Spring-Boot-2.0-Migration-Guide["`migration guide`" on the project wiki] that provides detailed upgrade instructions.
-Check also the {github-wiki}["`release notes`"] for a list of "`new and noteworthy`" features for each release.
+=== 从早期的 Spring Boot 版本进行升级
+如果你打算从 Spring Boot 的 `1.x` 版本进行升级的话，请查看  {github-wiki}/Spring-Boot-2.0-Migration-Guide["项目 WIKI 页面中`合并指南`" ] 的内容来了解有关升级的详细指南。
+请查看 {github-wiki}["`发布日志（release notes）`"] 页面中的内容来了解针对每一个发行版本的 "`新的和值得注意的特性`" 的信息。
 
-When upgrading to a new feature release, some properties may have been renamed or removed.
-Spring Boot provides a way to analyze your application's environment and print diagnostics at startup, but also temporarily migrate properties at runtime for you.
-To enable that feature, add the following dependency to your project:
+当升级到一个新的特性发布版本的时候，一些属性可能需要被重命名或者被删除。
+Spring Boot 提供了一个能够分析你的应用程序的工具，你可以通过这个工具来打印出应用的环境和启动诊断工具，来确定 Spring Boot 的属性配置正确和为你提供调试信息。
+如果你希望启用上面的这个特性的话，请将下面的依赖添加到你的项目中：
 
 [source,xml,indent=0]
 ----
@@ -339,12 +339,12 @@ To enable that feature, add the following dependency to your project:
 	</dependency>
 ----
 
-WARNING: Properties that are added late to the environment, such as when using `@PropertySource`, will not be taken into account.
+WARNING: 添加到环境中的属性，例如当使用 `@PropertySource` 的时候，将会在诊断工具中显示出来。
 
-NOTE: Once you're done with the migration, please make sure to remove this module from your project's dependencies.
+NOTE: 一旦你完成了合并，请确定将上面的依赖从你的项目中删除。
 
-To upgrade an existing CLI installation, use the appropriate package manager command (for example, `brew upgrade`).
-If you manually installed the CLI, follow the <<getting-started-manual-cli-installation, standard instructions>>, remembering to update your `PATH` environment variable to remove any older references.
+如果你希望对已经安装的 CLI 工具进行升级的话，请使用正确的升级工具或者命令（例如，可以使用 `brew upgrade`）。
+如果你是通过手动方式安装 CLI 的话，请参考 <<getting-started-manual-cli-installation, 标准的安装>>，请注意，当你更新你的 `PATH` 环境变量来删除任何可能存在的老的参考和应用。
 
 
 
