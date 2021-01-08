@@ -533,7 +533,7 @@ We step through the important parts in the next few sections.
 
 
 [[getting-started-first-application-annotations]]
-==== The @RestController and @RequestMapping Annotations
+==== @RestController 和 @RequestMapping 注解
 The first annotation on our `Example` class is `@RestController`.
 This is known as a _stereotype_ annotation.
 It provides hints for people reading the code and for Spring that the class plays a specific role.
