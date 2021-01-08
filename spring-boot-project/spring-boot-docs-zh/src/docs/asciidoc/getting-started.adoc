@@ -461,15 +461,18 @@ NOTE: 现在，你就可以将这个 Maven 构建文件导入到任何你喜欢�
 
 
 [[getting-started-first-application-dependencies]]
-=== Adding Classpath Dependencies
-Spring Boot provides a number of "`Starters`" that let you add jars to your classpath.
-Our applications for smoke tests use the `spring-boot-starter-parent` in the `parent` section of the POM.
-The `spring-boot-starter-parent` is a special starter that provides useful Maven defaults.
-It also provides a <<using-spring-boot.adoc#using-boot-dependency-management,`dependency-management`>> section so that you can omit `version` tags for "`blessed`" dependencies.
+=== 添加 Classpath 依赖
+Spring Boot 提供了一系列的  "`Starters`" 来让你将 Jar 添加到你的 classpath 路径中。
+我们的项目提供了一系列的 smoke tests，需要使用 `spring-boot-starter-parent` 定义在 POM 文件的 `parent` 部分。如果你对 smoke tests 不太了解的话，请参考相关定义和搜索相关文档。
+在这里 smoke tests 的定义就是能够让项目能够跑起来，并且实现一些基本的功能。
 
-Other "`Starters`" provide dependencies that you are likely to need when developing a specific type of application.
-Since we are developing a web application, we add a `spring-boot-starter-web` dependency.
-Before that, we can look at what we currently have by running the following command:
+`spring-boot-starter-parent` 是一个特殊的 starter。在这个定义中，我们为 Maven 提供了一些有用的默认配置。
+同时 `spring-boot-starter-parent` 还提供了一些  <<using-spring-boot.adoc#using-boot-dependency-management,`dependency-management`>>。
+因为上面的的配置，针对依赖，你可以针对 "`blessed`" 忽略掉 `version` 标签。
+
+当你针对 Spring Boot 在应用中，想使用一些特定的功能或者构建一些特定的应用，你可以针对需要来选择其他的 "`Starters`"。
+针对当前的示例，我们打算是构建一个 Web 应用程序，因此我们需要添加一个 `spring-boot-starter-web` 到依赖（dependency）中。
+在进行上面的操作之前，我们可以通过运行下面的命令来查看我们当前项目中使用的依赖：
 
 [indent=0]
 ----
@@ -478,9 +481,10 @@ Before that, we can look at what we currently have by running the following comm
 	[INFO] com.example:myproject:jar:0.0.1-SNAPSHOT
 ----
 
-The `mvn dependency:tree` command prints a tree representation of your project dependencies.
-You can see that `spring-boot-starter-parent` provides no dependencies by itself.
-To add the necessary dependencies, edit your `pom.xml` and add the `spring-boot-starter-web` dependency immediately below the `parent` section:
+`mvn dependency:tree` 命令行将会针对你的项目使用的依赖打印出依赖的树结构。
+现在，你可以看到 `spring-boot-starter-parent`，但是还没有添加其他的依赖。
+如果想添加一些必要的依赖，编辑你的 `pom.xml` 然后添加 `spring-boot-starter-web` 依赖代码到 pom.xml 文件的 `parent` 部分后面。
+具体的代码内容，请参考下面的示例：
 
 [source,xml,indent=0,subs="verbatim,quotes,attributes"]
 ----
@@ -492,12 +496,12 @@ To add the necessary dependencies, edit your `pom.xml` and add the `spring-boot-
 	</dependencies>
 ----
 
-If you run `mvn dependency:tree` again, you see that there are now a number of additional dependencies, including the Tomcat web server and Spring Boot itself.
+当你再次运行 `mvn dependency:tree` 的时候，你可以看到在你当前的项目中已经添加上去一些其他的依赖了。包括有 Tomcat web server 和 Spring Boot 本身。
 
 
 
 [[getting-started-first-application-code]]
-=== Writing the Code
+=== 书写代码
 To finish our application, we need to create a single Java file.
 By default, Maven compiles sources from `src/main/java`, so you need to create that directory structure and then add a file named `src/main/java/Example.java` to contain the following code:
 
