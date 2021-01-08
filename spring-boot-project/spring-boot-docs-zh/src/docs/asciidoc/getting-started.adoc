@@ -349,21 +349,22 @@ NOTE: 一旦你完成了合并，请确定将上面的依赖从你的项目中�
 
 
 [[getting-started-first-application]]
-== Developing Your First Spring Boot Application
-This section describes how to develop a small "`Hello World!`" web application that highlights some of Spring Boot's key features.
-We use Maven to build this project, since most IDEs support it.
+== 部署你的第一个 Spring Boot 应用
+这部分的内容将会对如何开发一个小的 "`Hello World!`" web 应用程序进行指导，同时还会对使用的 Spring Boot 的关键特性进行一些提示。
+我们将使用 Maven 来构建这个项目。我们选择使用 Maven 的原因是大部分的 IDE 都能很好的进行支持。
 
 [TIP]
 ====
-The https://spring.io[spring.io] web site contains many "`Getting Started`" https://spring.io/guides[guides] that use Spring Boot.
-If you need to solve a specific problem, check there first.
+https://spring.io[spring.io] 的网站提供了很多使用 Spring Boot 的 "`开始使用（Getting Started）`" 相关的 https://spring.io/guides[指南]。
+如果你需要解决一些特定的问题，请参考官方网站提供的开始使用指南。
 
-You can shortcut the steps below by going to https://start.spring.io and choosing the "Web" starter from the dependencies searcher.
-Doing so generates a new project structure so that you can <<getting-started-first-application-code,start coding right away>>.
-Check the {spring-initializr-docs}/#user-guide[Spring Initializr documentation] for more details.
+你可以简化创建这个小应用的过程。这是因为 https://start.spring.io 网站提供了快速构建项目的指南和链接。访问 https://start.spring.io 地址，然后从依赖搜索中选择 "Web" starter。
+通过上面的链接， Spring 的官方网站将会为你快速创建一个新的项目结构，随后你可以通过这个新的项目结构了 <<getting-started-first-application-code,快速进行代码开发>> 了。
+有关快速开启项目的文档，请参考 {spring-initializr-docs}/#user-guide[Spring 初始化文档（Spring Initializr documentation）] 页面中内容，来获得更多的详细信息。
 ====
 
-Before we begin, open a terminal and run the following commands to ensure that you have valid versions of Java and Maven installed:
+在我们开始构建示例应用之前，请打开你的命令行终端并且运行下面的命令以确定你的计算机环境中已经安装了需要的环境。
+我们需要 Java 和 Maven 环境。
 
 [indent=0]
 ----
@@ -381,16 +382,17 @@ Before we begin, open a terminal and run the following commands to ensure that y
 	Java version: 1.8.0_102, vendor: Oracle Corporation
 ----
 
-NOTE: This sample needs to be created in its own directory.
-Subsequent instructions assume that you have created a suitable directory and that it is your current directory.
+NOTE: 请注意，这个示例应用程序需要创建自己的目录。后面的示例内容，我们假定你已经创建了合适的目录，并且你已经在当前的目录中了。
+
+要创建合适目录的原因是 Maven 对目录结构是有特定的约束的。
 
 
 
 [[getting-started-first-application-pom]]
-=== Creating the POM
-We need to start by creating a Maven `pom.xml` file.
-The `pom.xml` is the recipe that is used to build your project.
-Open your favorite text editor and add the following:
+=== 创建 POM
+我们需要从创建一个 Maven `pom.xml` 文件开始整个过程。
+与我们做饭一样，Maven `pom.xml` 文件就好像一个菜单，我们需要使用这个来构建你的项目。
+打开你常用的文本编辑器，然后将下面的内容拷贝到 pom.xml 文件中。
 
 [source,xml,indent=0,subs="verbatim,quotes,attributes"]
 ----
@@ -450,11 +452,11 @@ endif::[]
 	</project>
 ----
 
-The preceding listing should give you a working build.
-You can test it by running `mvn package` (for now, you can ignore the "`jar will be empty - no content was marked for inclusion!`" warning).
+上面的 `pom.xml` 文件应该能够给你一个可以成功构建的项目。The preceding listing should give you a working build.
+你可以通过运行 `mvn package` 来进行测试（在当前，你可能会收到 "`jar will be empty - no content was marked for inclusion!`" 警告信息，直接忽略即可）。
 
-NOTE: At this point, you could import the project into an IDE (most modern Java IDEs include built-in support for Maven).
-For simplicity, we continue to use a plain text editor for this example.
+NOTE: 现在，你就可以将这个 Maven 构建文件导入到任何你喜欢的 IDE 中了（绝大多数 Java IDE 现在都能够支持导入 Maven 项目）。
+为了简化操作，在这个示例中，我们将不使用 IDE 而继续使用纯文本编辑器（text editor）。
 
 
 
