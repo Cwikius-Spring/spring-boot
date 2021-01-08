@@ -452,7 +452,7 @@ endif::[]
 	</project>
 ----
 
-上面的 `pom.xml` 文件应该能够给你一个可以成功构建的项目。The preceding listing should give you a working build.
+上面的 `pom.xml` 文件应该能够给你一个可以成功构建的项目。
 你可以通过运行 `mvn package` 来进行测试（在当前，你可能会收到 "`jar will be empty - no content was marked for inclusion!`" 警告信息，直接忽略即可）。
 
 NOTE: 现在，你就可以将这个 Maven 构建文件导入到任何你喜欢的 IDE 中了（绝大多数 Java IDE 现在都能够支持导入 Maven 项目）。
