@@ -6,7 +6,7 @@ include::authors.adoc[]
 The reference documentation consists of the following sections:
 
 [horizontal]
-<<legal.adoc#legal,Legal>> :: 版权和法律法规（Legal）
+<<legal.adoc#legal,Legal>> :: 版权和法律法规（Legal information）.
 <<documentation-overview.adoc#boot-documentation,Documentation Overview>> :: About the Documentation, Getting Help, First Steps, and more.
 <<getting-started.adoc#getting-started,Getting Started>> :: Introducing Spring Boot, System Requirements, Servlet Containers, Installing Spring Boot, Developing Your First Spring Boot Application
 <<using-spring-boot.adoc#using-boot,Using Spring Boot>> :: Build Systems, Structuring Your Code, Configuration, Spring Beans and Dependency Injection, DevTools, and more.
