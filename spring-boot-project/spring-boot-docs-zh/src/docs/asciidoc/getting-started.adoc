@@ -502,8 +502,10 @@ Spring Boot 提供了一系列的  "`Starters`" 来让你将 Jar 添加到你的
 
 [[getting-started-first-application-code]]
 === 书写代码
-To finish our application, we need to create a single Java file.
-By default, Maven compiles sources from `src/main/java`, so you need to create that directory structure and then add a file named `src/main/java/Example.java` to contain the following code:
+为了完成我们的第一个 Spring Boot 示例程序，我们需要向已经创建的项目框架中创建一个 Java 文件。
+在默认情况下，Maven 会编译 `src/main/java` 目录中的源代码（这个是与 Maven 使用的约定有关的，这个目录结构可以修改，但是不建议修改，因为绝大部分人都会遵守这个约定）。
+根据 Maven 的源代码约定，你需要按照下面的目录路径和文件名创建一个 Example.java 文件，完整的路径如下： `src/main/java/Example.java`。
+Example.java 文件的内容，你可以直接拷贝下面的源代码。
 
 [source,java,indent=0]
 ----
@@ -527,29 +529,33 @@ By default, Maven compiles sources from `src/main/java`, so you need to create t
 	}
 ----
 
-Although there is not much code here, quite a lot is going on.
-We step through the important parts in the next few sections.
+尽管上面代码看起来没有什么内容，但是实际上 Spring Boot 的框架已经为你做了很多工作了，在后续的章节中我们将会对代码中的一些重要内容进行解释和说明。
 
 
 
 [[getting-started-first-application-annotations]]
 ==== @RestController 和 @RequestMapping 注解
-The first annotation on our `Example` class is `@RestController`.
-This is known as a _stereotype_ annotation.
-It provides hints for people reading the code and for Spring that the class plays a specific role.
-In this case, our class is a web `@Controller`, so Spring considers it when handling incoming web requests.
+在示例源代码类中的第一个注解（annotation）是 `@RestController`。
+这个注解被称为 _stereotype_ 注解。在使用 Spring 的时候，需要对注解有所了解。Spring 有多个类型的注解，例如在包 org.springframework.context.annotation 和 org.springframework.stereotype 的注解。
+不仅仅是 @Component，他的派生注解 @Service、@Controller、@RestController 和 @Repository都在这个包中，实际上它就是在告诉使用者这些注解提供 stereotype 的特性（或者称为功能、作用）。
+Stereotype 特性最早出现在J2EE6 中，可以理解为围绕着 “元数据” 功能而发展出来的一种设计模式。
+这个注解提示人们在阅读代码的时候了解 Spring 实现的功能和扮演的特定的角色。
+在这个类中，我们告诉 Spring 是一个 Web 的 `@Controller`，因此 Spring 会通过这个注解来考虑这个类用于处理访问的 Web 请求。
 
-The `@RequestMapping` annotation provides "`routing`" information.
-It tells Spring that any HTTP request with the `/` path should be mapped to the `home` method.
-The `@RestController` annotation tells Spring to render the resulting string directly back to the caller.
+`@RequestMapping` 注解，为我们的应用提供了 "`routing`" 信息。在这里的 routing 可以理解为路径，在我们访问 Web 资源的时候都会要求提供一个路径的信息。
+具体有关这个注解的解释为任何 HTTP 的请求，如果使用了 `/` 路径的话，所有的请求将会映像到 `home` 方法，或者可以理解为 `home` 方法 将会被执行。
+`@RestController` 注解将会告诉 Spring 将返回的结果使用 String 字符串来进行渲染，然后将渲染的结果返回给调用者。
 
-TIP: The `@RestController` and `@RequestMapping` annotations are Spring MVC annotations (they are not specific to Spring Boot).
-See the {spring-framework-docs}/web.html#mvc[MVC section] in the Spring Reference Documentation for more details.
+@Controller 和 @RestController 之间有什么区别？ 非常简单来说  `@RestController` 是一个特殊版本的 controller。是由 `@Controller` 和 `@ResponseBody` 2 个注解合并而成的。
+在没有 `@RestController` 注解之前，你可以使用 `@Controller`，同时你还需要使用 `@ResponseBody` 注解来确定返回的内容是什么。设计 `@RestController` 的目的主要也是为了针对目前越来越流行的微服务和 Rest API 的开发来设计的。
+
+TIP: `@RestController` 和 `@RequestMapping` 注解都是 Spring MVC 中的注解（这 2 个注解是没有在 Spring Boot 中指定的）。
+请参考 Spring 参考文档中的 {spring-framework-docs}/web.html#mvc[MVC 部分] 来获得更多的有关信息。
 
 
 
 [[getting-started-first-application-auto-configuration]]
-==== The @EnableAutoConfiguration Annotation
+==== @EnableAutoConfiguration 注解
 The second class-level annotation is `@EnableAutoConfiguration`.
 This annotation tells Spring Boot to "`guess`" how you want to configure Spring, based on the jar dependencies that you have added.
 Since `spring-boot-starter-web` added Tomcat and Spring MVC, the auto-configuration assumes that you are developing a web application and sets up Spring accordingly.
