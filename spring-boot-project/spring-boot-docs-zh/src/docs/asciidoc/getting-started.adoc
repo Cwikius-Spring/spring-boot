@@ -569,14 +569,16 @@ TIP: `@RestController` 和 `@RequestMapping` 注解都是 Spring MVC 中的注�
 
 
 [[getting-started-first-application-main-method]]
-==== The "`main`" Method
-The final part of our application is the `main` method.
-This is a standard method that follows the Java convention for an application entry point.
-Our main method delegates to Spring Boot's `SpringApplication` class by calling `run`.
-`SpringApplication` bootstraps our application, starting Spring, which, in turn, starts the auto-configured Tomcat web server.
-We need to pass `Example.class` as an argument to the `run` method to tell `SpringApplication` which is the primary Spring component.
-The `args` array is also passed through to expose any command-line arguments.
+==== "`main`" 方法
+示例程序的最后需要介绍方法就是`main` 方法.
+针对一个应用程序，这个方法是标准的方法。在 Java 环境中，是需要使用 Main 方法来执行的。
+在我们定义的这个 main 方法中有一行代码，这个代码就是被用来运行 Spring Boot 的 `SpringApplication` 类中的 `run`。通过这个 run，我们就可以运行 Spring Boot 应用了。
+`SpringApplication` 将会引导我们的应用完成一系列的功能，包括有启动 Spring，开始自动配置 Tomcat Web 应用服务器。
 
+在启动的过程中，我们需要将 `Example.class` 参数传递到  `run` 方法中，这样可以告诉 `SpringApplication` 哪一个是 Spring 的主组件，换句话说就是告诉 Spring Boot 从哪个类开始启动。
+ `args` 数组同时也被用来传递在命令行中需要告诉应用程序的所有参数。
+
+main()方法是Java应用程序的入口方法，也就是说，程序在运行的时候，第一个执行的方法就是main()方法，这个方法和其他的方法有很大的不同，比如方法的名字必须是main，方法必须是 public static void 类型的，方法必须接收一个字符串数组的参数等等。
 
 
 [[getting-started-first-application-run]]
