@@ -582,11 +582,14 @@ main()方法是Java应用程序的入口方法，也就是说，程序在运行�
 
 
 [[getting-started-first-application-run]]
-=== Running the Example
-At this point, your application should work.
-Since you used the `spring-boot-starter-parent` POM, you have a useful `run` goal that you can use to start the application.
-Type `mvn spring-boot:run` from the root project directory to start the application.
-You should see output similar to the following:
+=== 运行示例程序
+当你完成所有上面的配置后，你的应用程序应该是能够正常的启动了。
+因为我们添加了 `spring-boot-starter-parent` 依赖到 POM，然后你就可以使用  `run` 来启动你的应用程序了。
+run 这个是可以使用 Maven 来运行的，你可以不需要是 IDE，从项目的结构中输入 `mvn spring-boot:run` 然后来启动应用程序。
+
+在第一次启动的时候，Maven 可能还需要下载必须的依赖，因此可能会消耗一些时间，在第二次启动的时候就没有这个问题了。
+
+在控制台界面中，你应该能够看到下面的输出：
 
 [indent=0,subs="attributes"]
 ----
@@ -605,15 +608,16 @@ You should see output similar to the following:
 	........ Started Example in 2.222 seconds (JVM running for 6.514)
 ----
 
-If you open a web browser to `http://localhost:8080`, you should see the following output:
+当 Spring Boot 完成启动后，打开你的浏览器，在浏览器的 URL 地址栏中输入 `http://localhost:8080` 后回车，你的浏览器应该能够显示下面的内容：
 
 [indent=0]
 ----
 	Hello World!
 ----
 
-To gracefully exit the application, press `ctrl-c`.
+如果你想退出正在运行的应用程序，在 cmd 命令行中输入： `ctrl-c`，就可以退出了。
 
+如果你的项目已经导入到 IDE 中了，在 IntelliJ IDEA 中，你可以直接启动命令行工具，然后在命令行工具中输入需要的命令。当然你也可以使用 IntelliJ IDEA 的运行命令直接运行。
 
 
 [[getting-started-first-application-executable-jar]]
