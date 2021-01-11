@@ -556,15 +556,14 @@ TIP: `@RestController` 和 `@RequestMapping` 注解都是 Spring MVC 中的注�
 
 [[getting-started-first-application-auto-configuration]]
 ==== @EnableAutoConfiguration 注解
-The second class-level annotation is `@EnableAutoConfiguration`.
-This annotation tells Spring Boot to "`guess`" how you want to configure Spring, based on the jar dependencies that you have added.
-Since `spring-boot-starter-web` added Tomcat and Spring MVC, the auto-configuration assumes that you are developing a web application and sets up Spring accordingly.
+在示例代码中的第二个注解是 `@EnableAutoConfiguration`。
+这个注解告诉 Spring Boot 如何去 "`猜测（guess）`" 你是如何希望配置 Spring 的。这个所谓的猜测过程其实也不是真的猜，是根据你添加的依赖来确定的。
+当添加 `spring-boot-starter-web` 依赖后，Spring 将会添加 Tomcat 和 Spring MVC 依赖。这个自动配置假定你将会部署一个 web 应用和设置 Spring 框架。
 
-.Starters and Auto-configuration
+.Starters 和 Auto-configuration
 ****
-Auto-configuration is designed to work well with "`Starters`", but the two concepts are not directly tied.
-You are free to pick and choose jar dependencies outside of the starters.
-Spring Boot still does its best to auto-configure your application.
+自动配置（Auto-configuration）被用来与 Spring 的 "`Starters`" 很好的协同工作。但是如果你还有其他的一些选项的话，你 Spring 的自动配置也会尝试去进行配置。 but the two concepts are not directly tied.
+你当然也可以选择 starters 之外的依赖。 Spring Boot 仍然将会尝试对你的应用进行自动配置。
 ****
 
 
