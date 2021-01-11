@@ -502,8 +502,10 @@ Spring Boot 提供了一系列的  "`Starters`" 来让你将 Jar 添加到你的
 
 [[getting-started-first-application-code]]
 === 书写代码
-To finish our application, we need to create a single Java file.
-By default, Maven compiles sources from `src/main/java`, so you need to create that directory structure and then add a file named `src/main/java/Example.java` to contain the following code:
+为了完成我们的第一个 Spring Boot 示例程序，我们需要向已经创建的项目框架中创建一个 Java 文件。
+在默认情况下，Maven 会编译 `src/main/java` 目录中的源代码（这个是与 Maven 使用的约定有关的，这个目录结构可以修改，但是不建议修改，因为绝大部分人都会遵守这个约定）。
+根据 Maven 的源代码约定，你需要按照下面的目录路径和文件名创建一个 Example.java 文件，完整的路径如下： `src/main/java/Example.java`。
+Example.java 文件的内容，你可以直接拷贝下面的源代码。
 
 [source,java,indent=0]
 ----
@@ -527,59 +529,67 @@ By default, Maven compiles sources from `src/main/java`, so you need to create t
 	}
 ----
 
-Although there is not much code here, quite a lot is going on.
-We step through the important parts in the next few sections.
+尽管上面代码看起来没有什么内容，但是实际上 Spring Boot 的框架已经为你做了很多工作了，在后续的章节中我们将会对代码中的一些重要内容进行解释和说明。
 
 
 
 [[getting-started-first-application-annotations]]
-==== The @RestController and @RequestMapping Annotations
-The first annotation on our `Example` class is `@RestController`.
-This is known as a _stereotype_ annotation.
-It provides hints for people reading the code and for Spring that the class plays a specific role.
-In this case, our class is a web `@Controller`, so Spring considers it when handling incoming web requests.
+==== @RestController 和 @RequestMapping 注解
+在示例源代码类中的第一个注解（annotation）是 `@RestController`。
+这个注解被称为 _stereotype_ 注解。在使用 Spring 的时候，需要对注解有所了解。Spring 有多个类型的注解，例如在包 org.springframework.context.annotation 和 org.springframework.stereotype 的注解。
+不仅仅是 @Component，他的派生注解 @Service、@Controller、@RestController 和 @Repository都在这个包中，实际上它就是在告诉使用者这些注解提供 stereotype 的特性（或者称为功能、作用）。
+Stereotype 特性最早出现在J2EE6 中，可以理解为围绕着 “元数据” 功能而发展出来的一种设计模式。
+这个注解提示人们在阅读代码的时候了解 Spring 实现的功能和扮演的特定的角色。
+在这个类中，我们告诉 Spring 是一个 Web 的 `@Controller`，因此 Spring 会通过这个注解来考虑这个类用于处理访问的 Web 请求。
 
-The `@RequestMapping` annotation provides "`routing`" information.
-It tells Spring that any HTTP request with the `/` path should be mapped to the `home` method.
-The `@RestController` annotation tells Spring to render the resulting string directly back to the caller.
+`@RequestMapping` 注解，为我们的应用提供了 "`routing`" 信息。在这里的 routing 可以理解为路径，在我们访问 Web 资源的时候都会要求提供一个路径的信息。
+具体有关这个注解的解释为任何 HTTP 的请求，如果使用了 `/` 路径的话，所有的请求将会映像到 `home` 方法，或者可以理解为 `home` 方法 将会被执行。
+`@RestController` 注解将会告诉 Spring 将返回的结果使用 String 字符串来进行渲染，然后将渲染的结果返回给调用者。
 
-TIP: The `@RestController` and `@RequestMapping` annotations are Spring MVC annotations (they are not specific to Spring Boot).
-See the {spring-framework-docs}/web.html#mvc[MVC section] in the Spring Reference Documentation for more details.
+@Controller 和 @RestController 之间有什么区别？ 非常简单来说  `@RestController` 是一个特殊版本的 controller。是由 `@Controller` 和 `@ResponseBody` 2 个注解合并而成的。
+在没有 `@RestController` 注解之前，你可以使用 `@Controller`，同时你还需要使用 `@ResponseBody` 注解来确定返回的内容是什么。设计 `@RestController` 的目的主要也是为了针对目前越来越流行的微服务和 Rest API 的开发来设计的。
+
+TIP: `@RestController` 和 `@RequestMapping` 注解都是 Spring MVC 中的注解（这 2 个注解是没有在 Spring Boot 中指定的）。
+请参考 Spring 参考文档中的 {spring-framework-docs}/web.html#mvc[MVC 部分] 来获得更多的有关信息。
 
 
 
 [[getting-started-first-application-auto-configuration]]
-==== The @EnableAutoConfiguration Annotation
-The second class-level annotation is `@EnableAutoConfiguration`.
-This annotation tells Spring Boot to "`guess`" how you want to configure Spring, based on the jar dependencies that you have added.
-Since `spring-boot-starter-web` added Tomcat and Spring MVC, the auto-configuration assumes that you are developing a web application and sets up Spring accordingly.
+==== @EnableAutoConfiguration 注解
+在示例代码中的第二个注解是 `@EnableAutoConfiguration`。
+这个注解告诉 Spring Boot 如何去 "`猜测（guess）`" 你是如何希望配置 Spring 的。这个所谓的猜测过程其实也不是真的猜，是根据你添加的依赖来确定的。
+当添加 `spring-boot-starter-web` 依赖后，Spring 将会添加 Tomcat 和 Spring MVC 依赖。这个自动配置假定你将会部署一个 web 应用和设置 Spring 框架。
 
-.Starters and Auto-configuration
+.Starters 和 Auto-configuration
 ****
-Auto-configuration is designed to work well with "`Starters`", but the two concepts are not directly tied.
-You are free to pick and choose jar dependencies outside of the starters.
-Spring Boot still does its best to auto-configure your application.
+自动配置（Auto-configuration）被用来与 Spring 的 "`Starters`" 很好的协同工作。但是如果你还有其他的一些选项的话，你 Spring 的自动配置也会尝试去进行配置。 but the two concepts are not directly tied.
+你当然也可以选择 starters 之外的依赖。 Spring Boot 仍然将会尝试对你的应用进行自动配置。
 ****
 
 
 
 [[getting-started-first-application-main-method]]
-==== The "`main`" Method
-The final part of our application is the `main` method.
-This is a standard method that follows the Java convention for an application entry point.
-Our main method delegates to Spring Boot's `SpringApplication` class by calling `run`.
-`SpringApplication` bootstraps our application, starting Spring, which, in turn, starts the auto-configured Tomcat web server.
-We need to pass `Example.class` as an argument to the `run` method to tell `SpringApplication` which is the primary Spring component.
-The `args` array is also passed through to expose any command-line arguments.
+==== "`main`" 方法
+示例程序的最后需要介绍方法就是`main` 方法.
+针对一个应用程序，这个方法是标准的方法。在 Java 环境中，是需要使用 Main 方法来执行的。
+在我们定义的这个 main 方法中有一行代码，这个代码就是被用来运行 Spring Boot 的 `SpringApplication` 类中的 `run`。通过这个 run，我们就可以运行 Spring Boot 应用了。
+`SpringApplication` 将会引导我们的应用完成一系列的功能，包括有启动 Spring，开始自动配置 Tomcat Web 应用服务器。
 
+在启动的过程中，我们需要将 `Example.class` 参数传递到  `run` 方法中，这样可以告诉 `SpringApplication` 哪一个是 Spring 的主组件，换句话说就是告诉 Spring Boot 从哪个类开始启动。
+ `args` 数组同时也被用来传递在命令行中需要告诉应用程序的所有参数。
+
+main()方法是Java应用程序的入口方法，也就是说，程序在运行的时候，第一个执行的方法就是main()方法，这个方法和其他的方法有很大的不同，比如方法的名字必须是main，方法必须是 public static void 类型的，方法必须接收一个字符串数组的参数等等。
 
 
 [[getting-started-first-application-run]]
-=== Running the Example
-At this point, your application should work.
-Since you used the `spring-boot-starter-parent` POM, you have a useful `run` goal that you can use to start the application.
-Type `mvn spring-boot:run` from the root project directory to start the application.
-You should see output similar to the following:
+=== 运行示例程序
+当你完成所有上面的配置后，你的应用程序应该是能够正常的启动了。
+因为我们添加了 `spring-boot-starter-parent` 依赖到 POM，然后你就可以使用  `run` 来启动你的应用程序了。
+run 这个是可以使用 Maven 来运行的，你可以不需要是 IDE，从项目的结构中输入 `mvn spring-boot:run` 然后来启动应用程序。
+
+在第一次启动的时候，Maven 可能还需要下载必须的依赖，因此可能会消耗一些时间，在第二次启动的时候就没有这个问题了。
+
+在控制台界面中，你应该能够看到下面的输出：
 
 [indent=0,subs="attributes"]
 ----
@@ -598,15 +608,16 @@ You should see output similar to the following:
 	........ Started Example in 2.222 seconds (JVM running for 6.514)
 ----
 
-If you open a web browser to `http://localhost:8080`, you should see the following output:
+当 Spring Boot 完成启动后，打开你的浏览器，在浏览器的 URL 地址栏中输入 `http://localhost:8080` 后回车，你的浏览器应该能够显示下面的内容：
 
 [indent=0]
 ----
 	Hello World!
 ----
 
-To gracefully exit the application, press `ctrl-c`.
+如果你想退出正在运行的应用程序，在 cmd 命令行中输入： `ctrl-c`，就可以退出了。
 
+如果你的项目已经导入到 IDE 中了，在 IntelliJ IDEA 中，你可以直接启动命令行工具，然后在命令行工具中输入需要的命令。当然你也可以使用 IntelliJ IDEA 的运行命令直接运行。
 
 
 [[getting-started-first-application-executable-jar]]
